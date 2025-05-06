@@ -1,3 +1,4 @@
 As a first step, we will create Azure Cloud Free Tier Account:
 
 https://azure.microsoft.com/en-in/pricing/purchase-options/azure-account/search?icid=free-search&ef_id=_k_Cj0KCQjw5ubABhDIARIsAHMigha8pOm_OtM-HE6MXNXdr8svfMrtqy0vDyQ1bvUpy98eEqctQ4xgbYgaAm6AEALw_wcB_k_&OCID=AIDcmm86ncqk20_SEM__k_Cj0KCQjw5ubABhDIARIsAHMigha8pOm_OtM-HE6MXNXdr8svfMrtqy0vDyQ1bvUpy98eEqctQ4xgbYgaAm6AEALw_wcB_k_&gad_source=1&gad_campaignid=21497226130&gbraid=0AAAAADcJh_vXJh8IG5OvflPHAuP_x9_js&gclid=Cj0KCQjw5ubABhDIARIsAHMigha8pOm_OtM-HE6MXNXdr8svfMrtqy0vDyQ1bvUpy98eEqctQ4xgbYgaAm6AEALw_wcB
+
