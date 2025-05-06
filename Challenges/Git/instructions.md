@@ -1,6 +1,6 @@
-# You must have Git installed locally on your computer. Download the package from the link - https://git-scm.com/downloads and install it
+You must have Git installed locally on your computer. Download the package from the link - https://git-scm.com/downloads and install it
 
-# We will use this local repo in the upcoming Get Started with GitHub demo
+We will use this local repo in the upcoming Get Started with GitHub demo
 
 Commands/Resources:
 
