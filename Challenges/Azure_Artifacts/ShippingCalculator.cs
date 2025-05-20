@@ -1,6 +1,6 @@
 namespace StoreCore;
 
-public class ShippingCalculator
+public class ShiippingCalculator
 {
     // A Constant for the base shipping cost per kilogram
     
@@ -18,9 +18,9 @@ public class ShippingCalculator
 
         // Calculate the shipping cost as the base cost times the weight
         decimal shippingCost = BaseCost * weight;
-    }
 
-    // Return the shipping cost
-    return shippingCost;
+        // Return the shipping cost
+        return shippingCost;
+    }
 
 }
