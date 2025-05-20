@@ -1,6 +1,6 @@
 namespace StoreCore;
 
-public class ShiippingCalculator
+public class ShippingCalculator
 {
     // A Constant for the base shipping cost per kilogram
     
@@ -8,12 +8,12 @@ public class ShiippingCalculator
 
     // A method to calculate the shipping cost based on weight
 
-    public decimal calculateShippingCost(decimal weight)
+    public decimal CalculateShippingCost(decimal weight)
     {
         // Validate the weight parameter
         if (weight <= 0)
         {
-            throw new ArgumentException("Weight must be positive.")
+            throw new ArgumentException("Weight must be positive.");
         }
 
         // Calculate the shipping cost as the base cost times the weight
