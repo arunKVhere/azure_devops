@@ -8,5 +8,11 @@ dotnet new classlib -n StoreCore -f net6.0
 
 cd StoreCore
 
-#Open StoreCore folder in a IDE Ex: VisualStuido
+#Open StoreCore folder in IDE Ex: VisualStuido
+
+Rename the Class1.cs to ShippingCalculator.cs and overwrite the existing code with the code in ShippingCalculator.cs file given in this folder
+
+#Open Webstore folder in IDE
+
+
 
