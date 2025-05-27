@@ -23,6 +23,6 @@
 
 #Create App service using app service plan:
 
-  az webapp create --name $appName --resource-group rg --plan $planName --runtime "DOTNET|6.0"
+  az webapp create --name $appName --resource-group $rg --plan $planName --runtime "DOTNETCORE:8.0"
 
 
