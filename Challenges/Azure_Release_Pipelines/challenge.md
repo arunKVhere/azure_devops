@@ -4,9 +4,9 @@
 
 #Choose no storage required and select your subscription. Click on Apply
 
-#Copy/paste the below details in the Azure Terminal: 
+#Copy/paste the below details in the Azure Terminal
 
-  location="centralindia"
+  location="centralindia" 
   rg="web1-rg"
   planName="web1-plan"
   appName="web1-webstore-app"
