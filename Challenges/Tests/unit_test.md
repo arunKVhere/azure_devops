@@ -62,24 +62,10 @@ Once new gitignore file add, COmmit and push the changes again to the new repo.
 
 Step 2 - YAML Pipeline (Mandatory):
 
-As this step uses multiple repositories in a single projects, we need a new section in our pipeline named resources. 
-And the projects need to be checkedout in the build stage
+Import this is git repo into your Azure DevOps as new repository - https://github.com/SairamSunkaranam/webstore
 
-- resources:
-    repositories:
-    - repository: 'StoreCoreTests'
-      type: git
-      name: <project-name>/<repo-name>
+Create Pipeline and try it. 
 
-- checkout: StoreCoreTests
-- checkout: self
-
-We need to add Test Step and Publish test results steps
-
-To add the testing step in the pipeline, we can add the .Net Core CLi for test option. 
-
-Publish Test results must be a new task. FOr this we need to add the Test Result format as VSTest, **/.trx, search folder must be 
-the temp directory in which we are storing the test results. 
 
   
   
