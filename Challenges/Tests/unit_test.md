@@ -9,7 +9,6 @@ The above command will create a new folder in your desktop. Open the folder in a
 In this folder, you will find UnitTests.cs file. Rename it to ShippingCalculatorTests.cs
 
 In the new file, make sure you copy/paste the below content:
-  
 
   using StoreCore
 
