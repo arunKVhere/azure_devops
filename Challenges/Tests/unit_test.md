@@ -11,7 +11,7 @@ In this folder, you will find UnitTests.cs file. Rename it to ShippingCalculator
 In the new file, make sure you copy/paste the below content:
 
   using StoreCore
-
+  
   namespace StoreCoreTests
   {
       public class ShippingCalculatorTests
