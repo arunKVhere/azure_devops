@@ -45,14 +45,12 @@ Once the above steps are completed, run the below commands to add the package lo
   dotnet add package Selenium.WebDriver
 
   Linux: 
-  
+ 
   export testUrl="https://web1-webstore-app-afa7hygcf4cva8gy.centralus-01.azurewebsites.net/Cart"
 
   In windows:
 
   set testUrl="https://web1-webstore-app-afa7hygcf4cva8gy.centralus-01.azurewebsites.net/Cart"
-
-Have a look at StoreCoreTests.csproj about the dependencies that we use. 
 
 Run the final command:
 
@@ -60,7 +58,7 @@ Run the final command:
 
 Both the tests should be passed.
 
-Create a new repository in the Azure DevOps project and push the new folder StoreCoreTests content into it. 
+Create a new repository in the Azure DevOps project and push the new folder webUITest content into it. 
 
 To add gitignore file:
 
