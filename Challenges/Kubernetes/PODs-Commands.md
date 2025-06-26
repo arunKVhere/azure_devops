@@ -1,17 +1,9 @@
-# Practice Test - PODs
-  - Take me to [Practice Test](https://kodekloud.com/topic/practice-test-pods/)
-
-## Here are the solutions to the practice test
-1. <details>
-   <summary>How many pods exist on the system?</summary>
+1. How many pods exist on the system?
 
    ```bash
    kubectl get pods
    ```
 
-   Count the number of pods (if any)
-
-   </details>
 
 1. <details>
    <summary>Create a new pod with the nginx image.</summary>
