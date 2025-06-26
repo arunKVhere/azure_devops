@@ -3,26 +3,18 @@
    ```bash
    kubectl get pods
    ```
-
-
-1. <details>
-   <summary>Create a new pod with the nginx image.</summary>
+   
+1. Create a new pod with the nginx image.
 
    ```bash
    kubectl run nginx --image=nginx
    ```
-   </details>
 
-1. <details>
-   <summary>How many pods are created now?</summary>
+1. How many pods are created now?
 
    ```bash
    kubectl get pods
    ```
-
-   Count the number of pods (if any)
-
-   To get the system to tell you you can also do this
 
    ```bash
    kubectl get pods --no-headers | wc -l
@@ -30,93 +22,37 @@
 
    * `--no-headers` should be obvious - output only the details.
    * `wc` is the word count program. `-l` tells it to count lines instead, and it will count the lines emitted by `kubectl`
-   </details>
-
-1. <details>
-   <summary>What is the image used to create the new pods?</summary>
-
-    `kubectl describe` outputs lots of information. The following will describe all pods whose name starts with `newpods`, and then we filter with `grep` to get what we are looking for.
+   
+1. What is the image used to create the new pods?
 
     ```bash
-    kubectl describe pod newpods | grep image
+    kubectl describe pod nginx | grep image
     ```
-
-    We see that all three are pulling the same image.
-   </details>
-
-1. <details>
-   <summary>Which nodes are these pods placed on?</summary>
+    
+1. Which nodes are these pods placed on?
 
     ```bash
     kubectl get pods -o wide
     ```
 
-    Note the node column for each of the 3 `newpods` pods
-
-   </details>
-
-1. <details>
-   <summary>How many containers are part of the pod webapp?</summary>
+1. How many containers are part of the pod webapp?
 
    ```bash
-   kubectl describe pod webapp
+   kubectl describe pod nginx
    ```
 
-   Look under the `Containers` section. Note there is `nginx` and `agentx`
+   Look under the `Containers` section. Note there is `nginx`
 
-   </details>
 
-1. <details>
-   <summary>What images are used in the new webapp pod?</summary>
-
-   Examine the output from Q6. For each of the identified containers, look at `Image:`
-
-   </details>
-
-1. <details>
-   <summary>What is the state of the container agentx in the pod webapp?</summary>
+1. What is the state of the container agentx in the pod nginx?
 
    ```bash
-   kubectl describe pod webapp
+   kubectl describe pod nginx
    ```
 
-   Examine the `State:` field for the `agentx` container.
+   Examine the `State:` field for the `nginx` container.
 
-   </details>
-
-1. <details>
-   <summary>Why do you think the container agentx in pod webapp is in error?</summary>
-
-   Examine the output from Q8 and look in the `Events:` section at the end. Look at the event that says `failed to pull and unpack image ...`
-
-   </details>
-
-1. <details>
-   <summary>What does the READY column in the output of the kubectl get pods command indicate?</summary>
-
-   ```bash
-   kubectl get pods
-   ```
-
-   Look at the `webapp` pod which we know has two containers and one is in error. You can deduce which of the answers is correct from this.
-
-   </details>
-
-1. <details>
-   <summary>Delete the webapp Pod.</summary>
-
-   ```bash
-   kubectl delete pod webapp
-   ```
-
-   To delete the pod without any delay and confirmation, we can add `--force` flag. Note that in a real production system, forcing is a last resort as it can leave behind containers that haven't been cleaned up properly. Some may have important cleanup jobs to run when they are requested to terminate, which wouldn't get run.
-
-   You can however use `--force` in the exam as it will gain you time. No exam pods rely on any of the above.
-
-   </details>
-
-1. <details>
-   <summary>Create a new pod with the name redis and with the image redis123.</br>Use a pod-definition YAML file.</summary>
+1. Create a new pod with the name redis and with the image redis123.</br>Use a pod-definition YAML file.
 
    To create the pod definition YAML file:
 
@@ -132,10 +68,7 @@
    kubectl create -f redis.yaml
    ```
 
-   </details>
-
-1. <details>
-   <summary>Now change the image on this pod to redis.</br>Once done, the pod should be in a running state.</summary>
+1. Now change the image on this pod to redis.</br>Once done, the pod should be in a running state.
 
    There are three ways this can be done!
 
@@ -170,4 +103,4 @@
       kubectl set image pod/redis redis=redis
       ```
 
-   </details>
+   
