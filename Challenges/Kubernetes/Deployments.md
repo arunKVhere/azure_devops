@@ -1,25 +1,4 @@
 
-1. How many Deployments exist on the system?
-
-   ```bash
-   kubectl get deployments
-   ```
-
-1. What is the image used to create the pods in the new deployment?
-
-   ```
-   kubectl describe deployment
-   ```
-
-   Look under the containers section.
-
-   Another way - run the following and check the `IMAGES` column
-
-   ```
-   kubectl get deployment -o wide
-   ```
-   
-
 1. Create a new Deployment using the deployment-definition-1.yaml file located at /root/.</br>There is an issue with the file, so try to fix it.
 
    ```
@@ -50,6 +29,26 @@
        matchLabels:
         type: front-end
 
+   ```
+
+1. How many Deployments exist on the system?
+
+   ```bash
+   kubectl get deployments
+   ```
+
+1. What is the image used to create the pods in the new deployment?
+
+   ```
+   kubectl describe deployment
+   ```
+
+   Look under the containers section.
+
+   Another way - run the following and check the `IMAGES` column
+
+   ```
+   kubectl get deployment -o wide
    ```
 
 1. The deployment automatically creates a ReplicaSet and pods. To see it
