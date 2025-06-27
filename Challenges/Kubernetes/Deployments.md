@@ -24,7 +24,9 @@
 
    ```
    kubectl create -f deployment-definition-1.yaml
+   ```
 
+   ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
