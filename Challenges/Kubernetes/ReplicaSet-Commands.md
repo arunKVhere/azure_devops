@@ -1,31 +1,58 @@
-1. How many ReplicaSets exist on the system?
+# ReplicaSets
 
-   ```bash
-   kubectl get replicasets
-   ```   
-   
-1. What is the image used to create the pods in the new-replica-set?
+In this section, we will take a look at the below
+- Replication Controller
+- ReplicaSet
 
+#### Controllers are brain behind kubernetes
+  
+## Difference between ReplicaSet and Replication Controller
+- **`Replication Controller`** is the older technology that is being replaced by a **`ReplicaSet`**.
+- **`ReplicaSet`** is the new way to setup replication.
+
+## Creating a Replication Controller
+
+## Replication Controller Definition File
+  
+   ```yaml
+    apiVersion: v1
+    kind: ReplicationController
+    metadata:
+      name: myapp-rc
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+     template:
+        metadata:
+          name: myapp-pod
+          labels:
+            app: myapp
+            type: front-end
+        spec:
+         containers:
+         - name: nginx-container
+           image: nginx
+     replicas: 3
    ```
-   kubectl describe replicaset
-   ```
+  - To Create the replication controller
+    ```
+    $ kubectl create -f rc-definition.yaml
+    ```
+  - To list all the replication controllers
+    ```
+    $ kubectl get replicationcontroller
+    ```
+  - To list pods that are launch by the replication controller
+    ```
+    $ kubectl get pods
+    ```
+    
+## Creating a ReplicaSet
+  
+## ReplicaSet Definition File
 
-   ...and look under the containers section --- or --
-
-   ```
-   kubectl get rs -o wide
-   ```
-
-   ...and look in the `IMAGES` column. Kubernetes accepts `rs` as shorthand for `replicaset`.
-
-1. Delete a pod in the replica set and see how replica set will replace it again. 
-   
-
-1. Create a ReplicaSet using the template
-
-   ```
-   kubectl create -f replicaset-definition-1.yaml
-
+```yaml
     apiVersion: apps/v1
     kind: ReplicaSet
     metadata:
@@ -48,41 +75,58 @@
      selector:
        matchLabels:
         type: front-end
-
-   ```
-
-   Get the apiVersion for replicaset
-
-   ```
-   $ kubectl explain replicaset | grep VERSION
-   ```
-
-1. Delete the created ReplicaSet
-
-   ```
-   kubectl delete replicaset replicaset-1
-   ```
-
-1. To edit the replica
-
-   ```
-   kubectl edit replicaset new-replica-set
-   ```
-
-   Export the RS to a yaml
+ ```
+#### ReplicaSet requires a selector definition when compare to Replication Controller.
    
-   ```
-   kubectl get rs new-replica-set -o yaml > rs.yaml
-   kubectl delete rs new-replica-set
-   kunectl create -f rs.yaml
-   ```
+  - To Create the replicaset
+    ```
+    $ kubectl create -f replicaset-definition.yaml
+    ```
+  - To list all the replicaset
+    ```
+    $ kubectl get replicaset
+    ```
+  - To list pods that are launch by the replicaset
+    ```
+    $ kubectl get pods
+    ```
+  
+## How to scale replicaset
+- There are multiple ways to scale replicaset
+  - First way is to update the number of replicas in the replicaset-definition.yaml definition file. E.g replicas: 6 and then run 
+   ```yaml
+       apiVersion: apps/v1
+       kind: ReplicaSet
+       metadata:
+         name: myapp-replicaset
+         labels:
+           app: myapp
+           type: front-end
+       spec:
+        template:
+           metadata:
+             name: myapp-pod
+             labels:
+               app: myapp
+               type: front-end
+           spec:
+            containers:
+            - name: nginx-container
+              image: nginx
+        replicas: 6
+        selector:
+          matchLabels:
+           type: front-end
+  ```
 
-   Scale it 
-   ```
-   kubectl scale rs new-replica-set --replicas 0
-   kubectl scale rs new-replica-set --replicas 4
-   ```
-
-   
-
-
+  ```
+  $ kubectl apply -f replicaset-definition.yaml
+  ```
+  - Second way is to use **`kubectl scale`** command.
+  ```
+  $ kubectl scale --replicas=6 -f replicaset-definition.yaml
+  ```
+  - Third way is to use **`kubectl scale`** command with type and name
+  ```
+  $ kubectl scale --replicas=6 replicaset myapp-replicaset
+  ```
