@@ -3,6 +3,6 @@ hello-aks-app/
 ├── requirements.txt   
 ├── Dockerfile   
 ├── manifests/   
-  │ ├── deployment.yaml   
+  ├── deployment.yaml   
   │ └── service.yaml   
 ├── azure-pipelines.yml  
