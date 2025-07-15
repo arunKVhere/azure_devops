@@ -1,1 +1,35 @@
 ## Add the Code for Azure DevOps ###
+
+trigger:
+- main
+
+variables:
+  imageName: 'hello-aks-app'
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - checkout: self
+
+    - #Add  Docker@2 task here to build the image
+      inputs:
+        command: buildAndPush
+        repository: $(imageName)
+        dockerfile: '**/Dockerfile'
+        containerRegistry: '<AzureContainerRegistryServiceConnection>'
+        tags: |
+          $(Build.BuildId)
+
+- stage: Deploy
+  dependsOn: Build
+  jobs:
+  - job: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - # Add the Kubernetes@1 to deploy the application into AKS cluster 
+    
