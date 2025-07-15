@@ -16,13 +16,6 @@ stages:
     - checkout: self
 
     - #Add  Docker@2 task here to build the image
-      inputs:
-        command: buildAndPush
-        repository: $(imageName)
-        dockerfile: '**/Dockerfile'
-        containerRegistry: '<AzureContainerRegistryServiceConnection>'
-        tags: |
-          $(Build.BuildId)
 
 - stage: Deploy
   dependsOn: Build
