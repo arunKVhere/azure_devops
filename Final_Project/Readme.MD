@@ -4,5 +4,5 @@ hello-aks-app/
 - Dockerfile   
 - manifests/  
   - deployment.yaml  
-  -service.yaml  
+  - service.yaml  
 - azure-pipelines.yml  
