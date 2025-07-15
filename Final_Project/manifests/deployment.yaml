@@ -1,0 +1,6 @@
+# Create a Deployment object which should deploy your docker image
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+spec:
+
